@@ -54,5 +54,5 @@ config .env with your data
 - password : author
 
 # Postman Collection :
-Download Postman Collection [here](https://raw.githubusercontent.com/prasetiyo28/sejutacita-backend/main/SEJUTACITA.postman_collection.json)
+Download Postman Collection [here](https://raw.githubusercontent.com/prasetiyo28/kompas-id-backend-editor/main/KOMPAS.postman_collection.json)
 
