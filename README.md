@@ -1,24 +1,25 @@
-# Backend API - Sejutacita . id
+# Backend API - EDITOR ARTIKEL . id
 Rest Api Service Backend dibangun menggunakan NodeJS(ExpressJS) , MySql dan Redis sebaga data storage
 
-# Running On Minikube
+# Running With Docker Compose
 ## Requirement
-- Minikube installed
-- kubectl installed
+- Docker installed
+- Docker Compose installed
 
 ## How to running
-- deploy to minkube
->  $ kubectl apply -f kube-deploy.yaml
+- runing with docker compose
+>  $ docker-compese up
 
-- running migration and seeding on your backend pod with :
+- go to docker container and run sh with :
+> $ docker-exec -it api-editor_backend_1 sh
+
+- running migration and seeding on your backend container with :
 > $ sequelize db:migrate 
   
 > $ sequelize db:seed:all
 * if error "sequelize command not found" install sequelize cli with this command :
 > $ npm install -g sequelize-cli
 
-- run the backend service on minikube with
-> $ minikube service backend
 
 you will get a port to access the API 
     
@@ -49,11 +50,9 @@ config .env with your data
 
 
 # Credential to Login
-- username : admin_sejutacita or admin@sejutacita.id
-- password : admin
+- username : author1 or author@kompas.id
+- password : author
 
 # Postman Collection :
 Download Postman Collection [here](https://raw.githubusercontent.com/prasetiyo28/sejutacita-backend/main/SEJUTACITA.postman_collection.json)
 
-# Diagram Flow
-![diagram flow](https://raw.githubusercontent.com/prasetiyo28/sejutacita-backend/main/flowchart.jpg)

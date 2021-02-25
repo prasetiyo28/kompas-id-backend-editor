@@ -1,6 +1,5 @@
 const DB = require('../models');
 const Users = DB.users;
-const Roles = DB.roles;
 const Sequelize = DB.Sequelize;
 const Op = Sequelize.Op;
 
@@ -11,9 +10,6 @@ exports.getUserByEmailUsername = async params => {
         email: params.username,
         username: params.username
       }
-    },
-    include: {
-      model: Roles
     }
   });
 };
@@ -22,19 +18,12 @@ exports.getUserById = async (userId) => {
   return Users.findOne({
     where: {
       id: userId
-    },
-    include: {
-      model: Roles
     }
   });
 };
 
 exports.GetAllUser = async () => {
-  return Users.findAll({
-    include: {
-      model: Roles
-    }
-  });
+  return Users.findAll();
 };
 
 exports.checkExist = async params => {

@@ -66,5 +66,5 @@ app.use(function (err, req, res, next) {
 
 
 app.disable('x-powered-by');
-
+app.set('view engine', 'ejs');
 module.exports = app;

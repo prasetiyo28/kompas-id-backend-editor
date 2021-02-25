@@ -14,7 +14,7 @@ exports.login = async (req, res, next) => {
     const checkPassword = await bcrypt.compare(params.password, user.password);
     if (checkPassword === false) return MSG.sendResponse(res, 'PASSWORD_NOT_MATCH');
 
-    const result = { user_id: user.id, username: user.username, email: user.email, role: user.role.role };
+    const result = { user_id: user.id, username: user.username, email: user.email};
     const currentTime = new Date().toISOString();
     const random = Math.random().toString();
     const accessKey = md5(currentTime + random);

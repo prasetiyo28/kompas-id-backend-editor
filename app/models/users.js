@@ -19,9 +19,6 @@ module.exports = function(sequelize, DataTypes){
     password: {
       type: DataTypes.STRING(250)
     },
-    id_role: {
-      type: DataTypes.STRING(250)
-    },
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,
@@ -36,10 +33,6 @@ module.exports = function(sequelize, DataTypes){
   });
   users.associate = function(models) {
     // associations can be defined here
-    users.hasOne(models.roles, {
-      foreignKey: 'id',
-      sourceKey: 'id_role',
-    });
     
   };
   return users;

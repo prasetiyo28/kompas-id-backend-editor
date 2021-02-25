@@ -2,19 +2,15 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-   return queryInterface.bulkInsert('roles', 
+   return queryInterface.bulkInsert('articles', 
    [{
-    id: '1',
-    role: 'user',
+    id: 1,
+    title: 'title example',
+    body: 'body example',
+    author_id: '1',
     createdAt: new Date(),
     updatedAt: new Date()
   },
-  {
-    id: '2',
-    role: 'admin',
-    createdAt: new Date(),
-    updatedAt: new Date()
-  }
 ]
   , {});
   },
@@ -27,6 +23,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
-   return queryInterface.bulkDelete('roles', null, {});
+   return queryInterface.bulkDelete('articles', null, {});
   }
 };
